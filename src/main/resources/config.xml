@@ -2,8 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="d" class="net.sahmi.dao.DaoImpl"></bean>
+    <bean id="dao" class="net.sahmi.dao.DaoImpl"/>
+
     <bean id="metier" class="net.sahmi.metier.MetierImpl">
-        <property name="dao" ref="d"></property>
+        <constructor-arg ref="dao"/>
     </bean>
 </beans>
